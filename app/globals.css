@@ -577,8 +577,7 @@ svg {
   text-align: center;
 }
 
-.section-heading > span,
-.strip-eyebrow {
+.section-heading > span {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -590,9 +589,7 @@ svg {
 }
 
 .section-heading > span::before,
-.section-heading > span::after,
-.strip-eyebrow::before,
-.strip-eyebrow::after {
+.section-heading > span::after {
   width: 19px;
   height: 1px;
   background: var(--gold);
@@ -865,63 +862,6 @@ svg {
   right: -29px;
   color: var(--gold);
   font-size: 19px;
-}
-
-.proof-strip {
-  position: relative;
-  overflow: hidden;
-  padding: 26px 0 31px;
-  background:
-    linear-gradient(90deg, rgba(241, 234, 226, 0.65), rgba(255, 253, 249, 0.8) 50%, rgba(241, 234, 226, 0.65)),
-    var(--cream);
-}
-
-.proof-pattern {
-  position: absolute;
-  top: 9px;
-  left: -68px;
-  width: 200px;
-  height: 130px;
-  border: 1px solid rgba(201, 146, 75, 0.12);
-  border-radius: 100% 100% 0 0;
-  opacity: 0.9;
-  transform: rotate(15deg);
-}
-
-.strip-eyebrow {
-  margin: 0 0 17px;
-}
-
-.proof-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.proof-grid > div {
-  padding: 0 16px;
-  border-right: 1px solid #e0d3c5;
-  text-align: center;
-}
-
-.proof-grid > div:last-child {
-  border-right: 0;
-}
-
-.proof-grid strong {
-  display: block;
-  color: var(--navy);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 1.05;
-}
-
-.proof-grid span {
-  display: block;
-  margin-top: 7px;
-  color: #5b6671;
-  font-size: 11.5px;
-  line-height: 1.3;
 }
 
 .clients-section {
@@ -1781,15 +1721,6 @@ svg {
     display: none;
   }
 
-  .proof-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 22px 0;
-  }
-
-  .proof-grid > div:nth-child(even) {
-    border-right: 0;
-  }
-
   .clients-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2010,19 +1941,6 @@ svg {
     text-align: left;
   }
 
-  .proof-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .proof-grid > div:nth-child(3) {
-    border-right: 1px solid #e0d3c5;
-  }
-
-  .proof-grid > div:nth-child(2),
-  .proof-grid > div:nth-child(4) {
-    border-right: 0;
-  }
-
   .clients-grid {
     grid-template-columns: 1fr;
   }
@@ -2072,8 +1990,7 @@ svg {
   font-size: 14.5px;
 }
 
-.section-heading > span,
-.strip-eyebrow {
+.section-heading > span {
   font-size: 13px;
 }
 
@@ -2116,7 +2033,6 @@ svg {
 }
 
 .hero-stat span,
-.proof-grid span,
 .contact-details small {
   font-size: 12.5px;
 }
