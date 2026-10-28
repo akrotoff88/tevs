@@ -37,6 +37,7 @@ yarn-error.log*
 next-env.d.ts
 /dist/
 /static-build/
+/.static-ssr/
 /.wrangler/
 /.sites-runtime/
 /outputs/

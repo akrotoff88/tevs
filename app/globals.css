@@ -5,6 +5,7 @@
   --navy-2: #0b2a46;
   --navy-3: #123755;
   --gold: #c9924b;
+  --gold-text: #8f5f25;
   --gold-light: #ddb16f;
   --cream: #faf7f2;
   --cream-deep: #f3eee7;
@@ -47,6 +48,14 @@ textarea {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--gold-light);
+  outline-offset: 3px;
 }
 
 a {
@@ -191,20 +200,21 @@ svg {
   font-size: 12px;
 }
 
-.lang-switcher button {
-  margin: 0;
-  padding: 3px 0;
-  border: 0;
+.lang-switcher a {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 8px;
+  align-items: center;
+  justify-content: center;
   color: rgba(255, 255, 255, 0.64);
-  background: transparent;
-  cursor: pointer;
   font-size: 12px;
   font-weight: 600;
   transition: color 180ms ease;
 }
 
-.lang-switcher button.selected,
-.lang-switcher button:hover {
+.lang-switcher a.selected,
+.lang-switcher a:hover {
   color: var(--white);
 }
 
@@ -224,8 +234,8 @@ svg {
 
 .menu-button {
   display: none;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -268,22 +278,39 @@ svg {
   top: 0;
   right: 0;
   bottom: 0;
+  display: block;
   width: 72%;
+  overflow: hidden;
   background-color: #a5a5a4;
-  background-image:
-    linear-gradient(90deg, #faf7f2 0%, rgba(250, 247, 242, 0.98) 12%, rgba(250, 247, 242, 0.78) 29%, rgba(250, 247, 242, 0.18) 48%, transparent 66%),
-    url("/natalia-tevs.jpg"),
-    linear-gradient(104deg, #b5b5b4 0%, #a9a9a8 54%, #858482 100%);
-  background-position: center, right top, center;
-  background-repeat: no-repeat;
-  background-size: cover, auto 118%, cover;
+  background-image: linear-gradient(104deg, #b5b5b4 0%, #a9a9a8 54%, #858482 100%);
+}
+
+.hero-art img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  max-width: none;
+  height: 118%;
+  object-fit: contain;
+}
+
+.hero-art::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(90deg, #faf7f2 0%, rgba(250, 247, 242, 0.98) 12%, rgba(250, 247, 242, 0.78) 29%, rgba(250, 247, 242, 0.18) 48%, transparent 66%);
+  content: "";
+  pointer-events: none;
 }
 
 .hero-art::after {
   position: absolute;
+  z-index: 2;
   inset: 0;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 42%, rgba(255, 252, 247, 0.08));
   content: "";
+  pointer-events: none;
 }
 
 .hero-ornament {
@@ -324,7 +351,7 @@ svg {
 
 .eyebrow {
   margin: 0 0 7px;
-  color: var(--gold);
+  color: var(--gold-text);
   font-size: 15px;
   letter-spacing: 0.01em;
 }
@@ -416,7 +443,7 @@ svg {
 
 .button-outline:hover {
   border-color: var(--gold);
-  color: var(--gold);
+  color: var(--gold-text);
 }
 
 .button-icon {
@@ -426,16 +453,16 @@ svg {
 
 .whatsapp-icon {
   display: inline-flex;
-  width: 19px;
-  height: 19px;
+  width: 21px;
+  height: 21px;
   align-items: center;
   justify-content: center;
-  border: 1px solid currentColor;
-  border-radius: 50%;
   color: var(--gold-light);
-  font-size: 16px;
-  line-height: 1;
-  transform: rotate(-35deg);
+}
+
+.whatsapp-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .hero-stats {
@@ -556,7 +583,7 @@ svg {
   align-items: center;
   justify-content: center;
   gap: 9px;
-  color: var(--gold);
+  color: var(--gold-text);
   font-size: 11.5px;
   letter-spacing: 0.055em;
   text-transform: uppercase;
@@ -614,8 +641,8 @@ svg {
 }
 
 .service-icon {
-  width: 48px;
-  height: 48px;
+  width: 38px;
+  height: 38px;
   margin: 0 auto 12px;
   color: var(--gold);
 }
@@ -681,6 +708,7 @@ svg {
 
 .light-eyebrow {
   margin-bottom: 1px;
+  color: var(--gold-light);
 }
 
 .about-intro h2 {
@@ -721,8 +749,8 @@ svg {
 }
 
 .principle-icon {
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   flex: 0 0 auto;
   color: var(--gold);
 }
@@ -765,8 +793,8 @@ svg {
 }
 
 .process-icon {
-  width: 53px;
-  height: 53px;
+  width: 40px;
+  height: 40px;
   margin: 0 auto 13px;
   color: var(--gold);
 }
@@ -776,9 +804,17 @@ svg {
   height: 100%;
 }
 
+.service-icon svg *,
+.principle-icon svg *,
+.process-icon svg *,
+.contact-details svg *,
+.lawyer-card svg * {
+  vector-effect: non-scaling-stroke;
+}
+
 .step-number {
   position: absolute;
-  top: 48px;
+  top: 35px;
   left: 16px;
   display: flex;
   width: 21px;
@@ -787,7 +823,7 @@ svg {
   justify-content: center;
   border-radius: 50%;
   color: var(--white);
-  background: var(--gold);
+  background: var(--gold-text);
   font-size: 10px;
   font-weight: 700;
 }
@@ -806,7 +842,7 @@ svg {
 
 .process-arrow {
   position: absolute;
-  top: 33px;
+  top: 25px;
   right: -29px;
   color: var(--gold);
   font-size: 19px;
@@ -839,7 +875,7 @@ svg {
 
 .proof-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .proof-grid > div {
@@ -908,7 +944,7 @@ svg {
 
 .client-number {
   flex: 0 0 auto;
-  color: var(--gold);
+  color: var(--gold-text);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 17px;
   line-height: 1;
@@ -993,50 +1029,6 @@ svg {
   line-height: 1.55;
 }
 
-.reviews-section {
-  padding-top: 30px;
-  padding-bottom: 45px;
-}
-
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 11px;
-}
-
-.reviews-grid blockquote {
-  position: relative;
-  min-height: 157px;
-  margin: 0;
-  padding: 22px 20px 18px;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  background: rgba(255, 255, 255, 0.8);
-}
-
-.quote {
-  position: absolute;
-  top: 10px;
-  left: 17px;
-  color: var(--gold);
-  font-family: Georgia, serif;
-  font-size: 29px;
-  line-height: 1;
-}
-
-.reviews-grid blockquote p {
-  margin: 16px 0 16px;
-  color: #4f5b67;
-  font-size: 11.5px;
-  line-height: 1.62;
-}
-
-.reviews-grid cite {
-  color: var(--navy);
-  font-size: 11.5px;
-  font-style: normal;
-}
-
 .faq-section {
   padding-top: 34px;
   padding-bottom: 38px;
@@ -1062,7 +1054,7 @@ svg {
 .faq-item button {
   display: flex;
   width: 100%;
-  min-height: 38px;
+  min-height: 44px;
   padding: 8px 14px;
   align-items: center;
   justify-content: space-between;
@@ -1185,7 +1177,7 @@ svg {
   gap: 9px;
 }
 
-.contact-form input,
+.contact-form input:not([type="checkbox"]),
 .contact-form textarea {
   width: 100%;
   border: 1px solid #d8dbe0;
@@ -1199,8 +1191,31 @@ svg {
     box-shadow 180ms ease;
 }
 
-.contact-form input {
-  height: 42px;
+.privacy-consent {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-items: start;
+  gap: 9px;
+  color: #596673;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.privacy-consent input {
+  width: 18px;
+  height: 18px;
+  margin: 1px 0 0;
+  accent-color: var(--navy);
+}
+
+.privacy-consent a {
+  color: var(--gold-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.contact-form input:not([type="checkbox"]) {
+  height: 44px;
   padding: 0 14px;
 }
 
@@ -1210,7 +1225,7 @@ svg {
   resize: vertical;
 }
 
-.contact-form input:focus,
+.contact-form input:not([type="checkbox"]):focus,
 .contact-form textarea:focus {
   border-color: rgba(201, 146, 75, 0.8);
   box-shadow: 0 0 0 3px rgba(201, 146, 75, 0.1);
@@ -1218,7 +1233,7 @@ svg {
 
 .contact-form .button {
   width: 100%;
-  height: 42px;
+  min-height: 44px;
 }
 
 .contact-form .button svg {
@@ -1350,20 +1365,26 @@ svg {
 
 .socials a {
   display: flex;
-  width: 25px;
-  height: 25px;
+  width: 44px;
+  height: 44px;
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(221, 177, 111, 0.55);
   border-radius: 50%;
   color: var(--gold-light);
-  font-size: 10px;
+}
+
+.socials a svg {
+  width: 22px;
+  height: 22px;
 }
 
 .footer-contact .privacy {
   margin-top: 24px;
-  color: rgba(255, 255, 255, 0.52) !important;
-  font-size: 9px !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+  font-size: 12px !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media (max-width: 1220px) {
@@ -1624,12 +1645,18 @@ svg {
     width: 100%;
     height: 425px;
     opacity: 1;
-    background-image:
-      linear-gradient(180deg, #faf7f2 0%, rgba(250, 247, 242, 0.52) 18%, transparent 46%),
-      url("/natalia-tevs.jpg"),
-      linear-gradient(104deg, #b5b5b4 0%, #a9a9a8 54%, #858482 100%);
-    background-position: center, 58% top, center;
-    background-size: cover, auto 118%, cover;
+    background-image: linear-gradient(104deg, #b5b5b4 0%, #a9a9a8 54%, #858482 100%);
+  }
+
+  .hero-art::before {
+    background: linear-gradient(180deg, #faf7f2 0%, rgba(250, 247, 242, 0.52) 18%, transparent 46%);
+  }
+
+  .hero-art img {
+    right: auto;
+    left: 58%;
+    height: 118%;
+    transform: translateX(-50%);
   }
 
   .hero-ornament {
@@ -1736,11 +1763,11 @@ svg {
   }
 
   .proof-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 22px 0;
   }
 
-  .proof-grid > div:nth-child(3) {
+  .proof-grid > div:nth-child(even) {
     border-right: 0;
   }
 
@@ -1754,14 +1781,6 @@ svg {
 
   .fixed-card {
     min-height: 190px;
-  }
-
-  .reviews-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .reviews-grid blockquote {
-    min-height: auto;
   }
 
   .faq-grid {
@@ -1837,8 +1856,11 @@ svg {
   .hero-art {
     top: 470px;
     height: 460px;
-    background-position: center, 56% top, center;
-    background-size: cover, auto 115%, cover;
+  }
+
+  .hero-art img {
+    left: 56%;
+    height: 115%;
   }
 
   .hero-ornament {
@@ -1935,7 +1957,7 @@ svg {
   }
 
   .step-number {
-    left: calc(50% - 48px);
+    left: calc(50% - 39px);
   }
 
   .proof-grid {
@@ -2022,8 +2044,6 @@ svg {
 .principles p,
 .process-card p,
 .fixed-card p,
-.reviews-grid blockquote p,
-.reviews-grid cite,
 .faq-item button,
 .faq-answer p,
 .contact-form input,
@@ -2064,7 +2084,7 @@ svg {
 }
 
 .footer-contact .privacy {
-  font-size: 11px !important;
+  font-size: 12px !important;
 }
 
 @media (max-width: 520px) {
@@ -2074,5 +2094,120 @@ svg {
 
   .hero-stat span {
     font-size: 12px;
+  }
+}
+
+/* Standalone privacy pages generated with the static build. */
+.legal-page {
+  min-height: 100vh;
+  background: var(--cream);
+}
+
+.legal-header {
+  color: var(--white);
+  background: linear-gradient(105deg, #08233d, #03172a 70%);
+}
+
+.legal-header .container {
+  display: flex;
+  min-height: 84px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.legal-logo {
+  color: var(--white);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  letter-spacing: 0.05em;
+}
+
+.legal-back {
+  display: inline-flex;
+  min-height: 44px;
+  padding: 8px 15px;
+  align-items: center;
+  border: 1px solid rgba(221, 177, 111, 0.52);
+  border-radius: 5px;
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+.legal-content {
+  width: min(860px, calc(100% - 34px));
+  margin: 0 auto;
+  padding: 58px 0 70px;
+}
+
+.legal-content h1 {
+  margin: 0 0 12px;
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.legal-updated {
+  margin: 0 0 38px;
+  color: #687480;
+}
+
+.legal-content section {
+  margin-top: 28px;
+  padding: 24px 26px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.legal-content h2 {
+  margin: 0 0 9px;
+  color: var(--navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.legal-content p,
+.legal-content li {
+  color: #4d5b69;
+  line-height: 1.7;
+}
+
+.legal-content a {
+  color: var(--gold-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal-content ul {
+  margin: 10px 0 0;
+  padding-left: 22px;
+}
+
+.legal-footer {
+  padding: 25px 0;
+  color: rgba(255, 255, 255, 0.76);
+  background: var(--navy);
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .legal-header .container {
+    min-height: 72px;
+  }
+
+  .legal-header .brand-copy small {
+    display: none;
+  }
+
+  .legal-content {
+    padding-top: 40px;
+  }
+
+  .legal-content section {
+    padding: 20px 18px;
   }
 }

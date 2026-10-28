@@ -7,9 +7,12 @@ const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   root: path.join(projectRoot, "static-src"),
-  base: "./",
+  base: "/",
   publicDir: path.join(projectRoot, "public"),
   plugins: [react()],
+  preview: {
+    allowedHosts: ["terminal.local"],
+  },
   build: {
     outDir: path.join(projectRoot, "static-build"),
     emptyOutDir: true,

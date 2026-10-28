@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useState } from "react";
 
-type Lang = "ru" | "kz";
+export type Lang = "ru" | "kk";
 
 const contact = {
   landline: "(7142) 75-12-20",
@@ -21,13 +21,12 @@ const content = {
       ["Услуги", "services"],
       ["Прайс", "prices"],
       ["Клиенты", "clients"],
-      ["Отзывы", "reviews"],
       ["FAQ", "faq"],
       ["Контакты", "contacts"],
     ],
     practice: "Юридическая практика",
     heroEyebrow: "Юридическая практика Тевс Натальи Геннадьевны",
-    heroTitle: "Профессиональная юридическая помощь в Казахстане",
+    heroTitle: "Юридическая помощь в Костанае и по Казахстану",
     heroText:
       "Более 15 лет практики. Решаю юридические задачи для частных лиц и бизнеса — быстро, надёжно и эффективно.",
     consult: "Получить консультацию",
@@ -73,11 +72,11 @@ const content = {
     aboutText1:
       "Юрист с опытом более 15 лет в области гражданского, корпоративного, семейного и административного права.",
     aboutText2:
-      "Работаю на результат, ценю доверие и время клиентов. Гарантирую индивидуальный подход, конфиденциальность и высокий уровень сервиса.",
+      "Работаю внимательно и последовательно, ценю доверие и время клиентов. Предлагаю понятную правовую стратегию, конфиденциальность и высокий уровень сервиса.",
     principles: [
       ["Опыт и экспертиза", "Более 15 лет успешной практики и сотни завершённых дел.", "expert"],
-      ["Ответственность", "Довожу дело до результата, беру на себя сложные задачи.", "award"],
-      ["Конфиденциальность", "Строгое соблюдение адвокатской этики и защита ваших данных.", "lock"],
+      ["Ответственность", "Сопровождаю задачу на каждом этапе и заранее объясняю возможные риски.", "award"],
+      ["Конфиденциальность", "Строгое соблюдение профессиональной этики и защита ваших данных.", "lock"],
       ["Практический подход", "Предлагаю оптимальные и рабочие решения для ваших задач.", "idea"],
     ],
     processEyebrow: "Как мы работаем",
@@ -86,7 +85,7 @@ const content = {
       ["Консультация", "Обсуждаем вашу ситуацию, определяем цели и возможные решения.", "chat"],
       ["Анализ и стратегия", "Изучаю документы, оцениваю риски, предлагаю план действий.", "document"],
       ["Реализация", "Подготавливаю документы, представляю интересы, сопровождаю процесс.", "handshake"],
-      ["Результат", "Вы получаете юридически верное решение и защищённый результат.", "check"],
+      ["Результат", "Вы получаете подготовленные документы и понятный план дальнейших действий.", "check"],
     ],
     stats: [
       ["15+", "лет практики"],
@@ -99,8 +98,6 @@ const content = {
       ["400+", "регистрационных процедур"],
       ["140+", "клиентов в судах"],
       ["70+", "объектов недвижимости"],
-      ["98%", "успешных дел"],
-      ["100%", "конфиденциальность"],
     ],
     proofEyebrow: "Опыт, которому доверяют",
     clientsEyebrow: "Нам доверяют",
@@ -134,23 +131,6 @@ const content = {
     fixedTitle: "Фиксированная стоимость",
     fixedText:
       "Стоимость обсуждается заранее и фиксируется в договоре. Без скрытых платежей.",
-    reviewsEyebrow: "Отзывы клиентов",
-    reviewsTitle: "Что говорят клиенты",
-    reviews: [
-      [
-        "Профессионал своего дела! Быстро разобралась в ситуации и помогла решить вопрос с недвижимостью без лишних сложностей. Рекомендую!",
-        "А., Алматы",
-      ],
-      [
-        "Обратились по вопросу регистрации ТОО. Всё сделано в срок, чётко и без лишней бюрократии. Спасибо за высокий уровень сервиса.",
-        "М., Астана",
-      ],
-      [
-        "Выиграли сложный судебный спор. Наталья Геннадьевна очень внимательна к деталям и всегда на связи.",
-        "Е., Караганда",
-      ],
-    ],
-    allReviews: "Отправить свой отзыв",
     faqEyebrow: "Ответы на частые вопросы",
     faqTitle: "FAQ",
     faqs: [
@@ -190,7 +170,9 @@ const content = {
     formPhone: "Телефон",
     formEmail: "E-mail",
     formMessage: "Ваше сообщение",
-    formSubmit: "Отправить сообщение",
+    formSubmit: "Отправить в WhatsApp",
+    privacyAgree: "Я соглашаюсь с обработкой данных и передачей сообщения в WhatsApp согласно",
+    privacyLink: "Политика конфиденциальности",
     ready: "Готова помочь вам в сложных юридических вопросах.",
     readyText: "Обращайтесь — найду для вас лучшее решение!",
     whatsapp: "Написать в WhatsApp",
@@ -200,20 +182,19 @@ const content = {
     privacy: "Политика конфиденциальности",
     rights: "© 2026 TEVS.KZ. Все права защищены.",
   },
-  kz: {
+  kk: {
     nav: [
       ["Басты бет", "top"],
       ["Мен туралы", "about"],
       ["Қызметтер", "services"],
       ["Бағалар", "prices"],
       ["Клиенттер", "clients"],
-      ["Пікірлер", "reviews"],
       ["FAQ", "faq"],
       ["Байланыс", "contacts"],
     ],
     practice: "Заңгерлік тәжірибе",
-    heroEyebrow: "Тевс Наталья Геннадьевнаның заңгерлік тәжірибесі",
-    heroTitle: "Қазақстандағы кәсіби заң көмегі",
+    heroEyebrow: "Заңгер Тевс Наталья Геннадьевна",
+    heroTitle: "Қостанайда және Қазақстан бойынша заң көмегі",
     heroText:
       "15 жылдан астам тәжірибе. Жеке тұлғалар мен бизнеске арналған құқықтық мәселелерді жылдам, сенімді және тиімді шешемін.",
     consult: "Кеңес алу",
@@ -259,10 +240,10 @@ const content = {
     aboutText1:
       "Азаматтық, корпоративтік, отбасылық және әкімшілік құқық саласында 15 жылдан астам тәжірибесі бар заңгер.",
     aboutText2:
-      "Нәтижеге жұмыс істеймін, клиенттердің сенімі мен уақытын бағалаймын. Жеке тәсілді, құпиялықты және жоғары қызмет сапасын қамтамасыз етемін.",
+      "Мұқият әрі жүйелі жұмыс істеймін, клиенттердің сенімі мен уақытын бағалаймын. Түсінікті құқықтық стратегияны, құпиялықты және жоғары қызмет сапасын ұсынамын.",
     principles: [
       ["Тәжірибе мен сараптама", "15 жылдан астам табысты тәжірибе және жүздеген аяқталған іс.", "expert"],
-      ["Жауапкершілік", "Істі нәтижеге дейін жеткіземін, күрделі міндеттерді өз мойныма аламын.", "award"],
+      ["Жауапкершілік", "Міндетті әр кезеңде сүйемелдеп, ықтимал тәуекелдерді алдын ала түсіндіремін.", "award"],
       ["Құпиялық", "Кәсіби әдепті қатаң сақтау және деректеріңізді қорғау.", "lock"],
       ["Практикалық тәсіл", "Міндеттеріңізге тиімді және жұмыс істейтін шешімдер ұсынамын.", "idea"],
     ],
@@ -272,7 +253,7 @@ const content = {
       ["Кеңес", "Жағдайыңызды талқылап, мақсаттар мен ықтимал шешімдерді анықтаймыз.", "chat"],
       ["Талдау және стратегия", "Құжаттарды зерттеп, тәуекелдерді бағалап, іс-қимыл жоспарын ұсынамын.", "document"],
       ["Іске асыру", "Құжаттарды дайындап, мүдделеріңізді қорғап, процесті сүйемелдеймін.", "handshake"],
-      ["Нәтиже", "Заңды дұрыс шешім мен қорғалған нәтижеге қол жеткізесіз.", "check"],
+      ["Нәтиже", "Дайындалған құжаттар мен кейінгі әрекеттердің түсінікті жоспарын аласыз.", "check"],
     ],
     stats: [
       ["15+", "жыл тәжірибе"],
@@ -285,8 +266,6 @@ const content = {
       ["400+", "тіркеу рәсімі"],
       ["140+", "соттағы клиент"],
       ["70+", "жылжымайтын мүлік нысаны"],
-      ["98%", "табысты іс"],
-      ["100%", "құпиялық"],
     ],
     proofEyebrow: "Сенімге ие тәжірибе",
     clientsEyebrow: "Бізге сенім артады",
@@ -320,23 +299,6 @@ const content = {
     fixedTitle: "Бекітілген құн",
     fixedText:
       "Құны алдын ала талқыланып, шартта бекітіледі. Жасырын төлемдер жоқ.",
-    reviewsEyebrow: "Клиенттердің пікірлері",
-    reviewsTitle: "Клиенттер не дейді",
-    reviews: [
-      [
-        "Өз ісінің нағыз маманы! Жағдайды тез түсініп, жылжымайтын мүлік мәселесін артық қиындықсыз шешуге көмектесті. Ұсынамын!",
-        "А., Алматы",
-      ],
-      [
-        "ЖШС тіркеу мәселесі бойынша жүгіндік. Барлығы уақытында, нақты және артық бюрократиясыз жасалды. Жоғары қызмет деңгейі үшін рақмет.",
-        "М., Астана",
-      ],
-      [
-        "Күрделі сот дауын жеңдік. Наталья Геннадьевна егжей-тегжейге өте мұқият және үнемі байланыста болды.",
-        "Е., Қарағанды",
-      ],
-    ],
-    allReviews: "Пікір қалдыру",
     faqEyebrow: "Жиі қойылатын сұрақтарға жауаптар",
     faqTitle: "FAQ",
     faqs: [
@@ -376,7 +338,9 @@ const content = {
     formPhone: "Телефон",
     formEmail: "E-mail",
     formMessage: "Сіздің хабарламаңыз",
-    formSubmit: "Хабарлама жіберу",
+    formSubmit: "WhatsApp арқылы жіберу",
+    privacyAgree: "Деректерді өңдеуге және хабарламаны WhatsApp арқылы жіберуге келісемін:",
+    privacyLink: "Құпиялық саясаты",
     ready: "Күрделі құқықтық мәселелеріңізді шешуге көмектесуге дайынмын.",
     readyText: "Хабарласыңыз — сіз үшін тиімді шешім табамын!",
     whatsapp: "WhatsApp-қа жазу",
@@ -442,16 +406,16 @@ function Mark({ className = "" }: { className?: string }) {
   );
 }
 
-function Brand({ compact = false }: { compact?: boolean }) {
+function Brand({ compact = false, lang = "ru" }: { compact?: boolean; lang?: Lang }) {
   return (
     <div className={`brand ${compact ? "brand-compact" : ""}`}>
       <Mark className="brand-mark" />
       <span className="brand-copy">
         <strong>TEVS.KZ</strong>
         <small>
-          Юридическая практика
+          {lang === "ru" ? "Юридическая практика" : "Заңгерлік тәжірибе"}
           <br />
-          Тевс Натальи Геннадьевны
+          {lang === "ru" ? "Тевс Натальи Геннадьевны" : "Тевс Наталья Геннадьевна"}
         </small>
       </span>
     </div>
@@ -562,6 +526,12 @@ function Icon({ name }: { name: string }) {
     phone: (
       <path d="M5 3h4l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v4c0 1.1-.9 2-2 2C10.2 20.5 3.5 13.8 3 5a2 2 0 0 1 2-2Z" />
     ),
+    whatsapp: (
+      <>
+        <path d="M20.5 11.7a8.5 8.5 0 0 1-8.9 8.5 10.8 10.8 0 0 1-4.1-.9L3 21l1.6-4.2a8.5 8.5 0 1 1 15.9-5.1Z" />
+        <path d="M8.2 7.5c.3-.5.5-.5.8-.5h.5c.2 0 .4.1.5.4l.9 2.1c.1.3.1.5-.1.7l-.7.9c.8 1.7 2.2 3 3.9 3.8l.9-.8c.2-.2.5-.2.7-.1l2.1 1c.3.1.4.3.4.6v.6c0 .5-.3.9-.7 1.1-.6.3-1.3.4-2 .3-4.6-.7-8.3-4.4-9-9-.1-.8 0-1.5.4-2.1Z" />
+      </>
+    ),
     mail: (
       <>
         <rect x="3" y="5" width="18" height="14" rx="2" />
@@ -614,10 +584,22 @@ function Heading({
   );
 }
 
-export default function Home() {
-  const [lang, setLang] = useState<Lang>("ru");
+function LanguageSwitcher({ lang }: { lang: Lang }) {
+  return (
+    <div className="lang-switcher" aria-label={lang === "ru" ? "Язык сайта" : "Сайт тілі"}>
+      {/* Full-page links intentionally load the matching prerendered language document. */}
+      {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+      <a className={lang === "ru" ? "selected" : ""} href="/" lang="ru" hrefLang="ru" aria-current={lang === "ru" ? "page" : undefined}>RU</a>
+      <span>/</span>
+      <a className={lang === "kk" ? "selected" : ""} href="/kk/" lang="kk" hrefLang="kk" aria-current={lang === "kk" ? "page" : undefined}>KZ</a>
+    </div>
+  );
+}
+
+export default function Home({ lang = "ru" }: { lang?: Lang } = {}) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [activeSection, setActiveSection] = useState("top");
   const t = content[lang];
 
   useEffect(() => {
@@ -628,6 +610,26 @@ export default function Home() {
       document.getElementById(sectionId)?.scrollIntoView({ block: "start" });
     });
   }, []);
+
+  useEffect(() => {
+    const sections = t.nav
+      .map(([, id]) => document.getElementById(id))
+      .filter((section): section is HTMLElement => Boolean(section));
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible?.target.id) setActiveSection(visible.target.id);
+      },
+      { rootMargin: "-96px 0px -58%", threshold: [0.05, 0.25, 0.6] },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, [t.nav]);
 
   function navigateToSection(event: React.MouseEvent<HTMLAnchorElement>, sectionId: string) {
     event.preventDefault();
@@ -640,6 +642,7 @@ export default function Home() {
     if (window.location.hash !== nextHash) {
       window.history.pushState(null, "", nextHash);
     }
+    setActiveSection(sectionId);
     target.scrollIntoView({ block: "start", behavior: "auto" });
   }
 
@@ -660,15 +663,16 @@ export default function Home() {
     <main id="top">
       <header className="site-header">
         <div className="header-inner">
-          <a href="#top" aria-label="TEVS.KZ — главная">
-            <Brand />
+          <a href="#top" aria-label={lang === "ru" ? "TEVS.KZ — главная" : "TEVS.KZ — басты бет"}>
+            <Brand lang={lang} />
           </a>
 
           <nav className={`desktop-nav ${menuOpen ? "mobile-open" : ""}`} aria-label="Основная навигация">
-            {t.nav.map(([label, id], index) => (
+            {t.nav.map(([label, id]) => (
               <a
                 href={`#${id}`}
-                className={index === 0 ? "active" : ""}
+                className={activeSection === id ? "active" : ""}
+                aria-current={activeSection === id ? "location" : undefined}
                 key={id}
                 onClick={(event) => navigateToSection(event, id)}
               >
@@ -676,21 +680,13 @@ export default function Home() {
               </a>
             ))}
             <div className="mobile-actions">
-              <div className="lang-switcher">
-                <button className={lang === "ru" ? "selected" : ""} onClick={() => setLang("ru")}>RU</button>
-                <span>/</span>
-                <button className={lang === "kz" ? "selected" : ""} onClick={() => setLang("kz")}>KZ</button>
-              </div>
+              <LanguageSwitcher lang={lang} />
               <a className="header-phone" href={contact.mobileHref}>{contact.mobile}</a>
             </div>
           </nav>
 
           <div className="header-actions">
-            <div className="lang-switcher">
-              <button className={lang === "ru" ? "selected" : ""} onClick={() => setLang("ru")}>RU</button>
-              <span>/</span>
-              <button className={lang === "kz" ? "selected" : ""} onClick={() => setLang("kz")}>KZ</button>
-            </div>
+            <LanguageSwitcher lang={lang} />
             <a className="header-phone" href={contact.mobileHref}>
               <Icon name="phone" />
               {contact.mobile}
@@ -699,7 +695,7 @@ export default function Home() {
               className="menu-button"
               onClick={() => setMenuOpen((value) => !value)}
               aria-expanded={menuOpen}
-              aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"}
+              aria-label={menuOpen ? (lang === "ru" ? "Закрыть меню" : "Мәзірді жабу") : (lang === "ru" ? "Открыть меню" : "Мәзірді ашу")}
             >
               <Icon name={menuOpen ? "close" : "menu"} />
             </button>
@@ -708,7 +704,21 @@ export default function Home() {
       </header>
 
       <section className="hero">
-        <div className="hero-art" aria-hidden="true" />
+        <picture className="hero-art">
+          <source
+            type="image/webp"
+            srcSet="/natalia-tevs-720.webp 720w, /natalia-tevs-1333.webp 1333w"
+            sizes="(max-width: 760px) 100vw, 72vw"
+          />
+          <img
+            src="/natalia-tevs.jpg"
+            alt="Тевс Наталья Геннадьевна"
+            width="1333"
+            height="1600"
+            fetchPriority="high"
+            decoding="async"
+          />
+        </picture>
         <div className="hero-ornament" aria-hidden="true">
           <span />
           <span />
@@ -719,17 +729,19 @@ export default function Home() {
             <h1>
               {lang === "ru" ? (
                 <>
-                  Профессиональная
+                  Юридическая помощь
                   <br />
-                  юридическая помощь
+                  в Костанае
                   <br />
-                  в Казахстане
+                  и по Казахстану
                 </>
               ) : (
                 <>
-                  Қазақстандағы
+                  Қостанайда және
                   <br />
-                  кәсіби заң көмегі
+                  Қазақстан бойынша
+                  <br />
+                  заң көмегі
                 </>
               )}
             </h1>
@@ -737,7 +749,7 @@ export default function Home() {
             <div className="hero-buttons">
               <a className="button button-primary" href="#contacts">
                 {t.consult}
-                <span className="button-icon whatsapp-icon">◔</span>
+                <span className="button-icon whatsapp-icon"><Icon name="whatsapp" /></span>
               </a>
               <a className="button button-secondary" href="#services">
                 {t.viewServices}
@@ -880,24 +892,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section reviews-section" id="reviews">
-        <div className="container">
-          <Heading eyebrow={t.reviewsEyebrow} title={t.reviewsTitle} />
-          <div className="reviews-grid">
-            {t.reviews.map(([text, author]) => (
-              <blockquote key={author}>
-                <span className="quote">“</span>
-                <p>{text}</p>
-                <cite>{author}</cite>
-              </blockquote>
-            ))}
-          </div>
-          <a className="button button-outline section-button" href="#contacts">
-            {t.allReviews}<span>→</span>
-          </a>
-        </div>
-      </section>
-
       <section className="section faq-section" id="faq">
         <div className="container">
           <Heading eyebrow={t.faqEyebrow} title={t.faqTitle} />
@@ -950,6 +944,15 @@ export default function Home() {
                 <input name="email" type="email" placeholder={t.formEmail} aria-label={t.formEmail} />
               </div>
               <textarea name="message" required placeholder={t.formMessage} aria-label={t.formMessage} />
+              <label className="privacy-consent">
+                <input name="privacy" type="checkbox" required />
+                <span>
+                  {t.privacyAgree}{" "}
+                  <a href={lang === "ru" ? "/privacy/" : "/kk/privacy/"} target="_blank" rel="noreferrer">
+                    {t.privacyLink}
+                  </a>
+                </span>
+              </label>
               <button className="button button-primary" type="submit">
                 {t.formSubmit}<Icon name="send" />
               </button>
@@ -960,7 +963,7 @@ export default function Home() {
               <h3>{t.ready}</h3>
               <p>{t.readyText}</p>
               <a className="button button-gold" href={contact.whatsapp} target="_blank" rel="noreferrer">
-                <span className="whatsapp-icon">◔</span>{t.whatsapp}
+                <span className="whatsapp-icon"><Icon name="whatsapp" /></span>{t.whatsapp}
               </a>
             </aside>
           </div>
@@ -970,7 +973,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="container footer-grid">
           <div className="footer-brand">
-            <Brand compact />
+            <Brand compact lang={lang} />
             <p>{t.rights}</p>
           </div>
           <div>
@@ -981,24 +984,21 @@ export default function Home() {
             <h3>{t.footerCompany}</h3>
             <a href="#about">{t.nav[1][0]}</a>
             <a href="#clients">{t.nav[4][0]}</a>
-            <a href="#reviews">{t.nav[5][0]}</a>
           </div>
           <div>
             <h3>{t.footerInfo}</h3>
             <a href="#prices">{t.nav[3][0]}</a>
             <a href="#faq">FAQ</a>
-            <a href="#contacts">{t.nav[7][0]}</a>
+            <a href="#contacts">{t.nav[6][0]}</a>
           </div>
           <div className="footer-contact">
             <a href={contact.landlineHref}><Icon name="phone" />{contact.landline}</a>
             <a href={contact.mobileHref}><Icon name="phone" />{contact.mobile}</a>
             <a href={`mailto:${contact.email}`}><Icon name="mail" />{contact.email}</a>
-            <div className="socials" aria-label="Социальные сети">
-              <a href={contact.whatsapp} aria-label="WhatsApp">W</a>
-              <a href="#contacts" aria-label="Instagram">I</a>
-              <a href="#contacts" aria-label="Telegram">T</a>
+            <div className="socials" aria-label={lang === "ru" ? "Связаться в мессенджере" : "Мессенджер арқылы байланысу"}>
+              <a href={contact.whatsapp} target="_blank" rel="noreferrer" aria-label="WhatsApp"><Icon name="whatsapp" /></a>
             </div>
-            <a className="privacy" href="#faq">{t.privacy}</a>
+            <a className="privacy" href={lang === "ru" ? "/privacy/" : "/kk/privacy/"}>{t.privacy}</a>
           </div>
         </div>
       </footer>

@@ -1,10 +1,7 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { hydrateRoot } from "react-dom/client";
 import "../app/globals.css";
-import Home from "../app/page";
+import Home, { type Lang } from "../app/page";
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <Home />
-  </StrictMode>,
-);
+const lang: Lang = document.documentElement.lang === "kk" ? "kk" : "ru";
+
+hydrateRoot(document.getElementById("root")!, <Home lang={lang} />);
