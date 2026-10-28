@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tevs.kz/sitemap.xml
