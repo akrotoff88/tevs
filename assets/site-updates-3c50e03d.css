@@ -1,0 +1,13 @@
+/* Contact and first-screen layout updates. */
+.contact-messengers{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.contact-messengers a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 12px;border:1px solid #c9924b;border-radius:7px;color:#061d33;font-size:13px;font-weight:600}
+.contact-messengers a:hover{background:#f3eee7}
+@media(max-width:760px){
+.hero{display:flex;flex-direction:column;min-height:0}
+.hero-inner{order:1;position:static;min-height:0;padding-top:32px;padding-bottom:24px}
+.hero-copy{position:static;width:100%}
+.hero h1{font-size:clamp(32px,8.6vw,44px);line-height:1.08}
+.hero-art{order:2;position:relative;inset:auto;flex:0 0 440px;width:100%;height:440px}
+.hero-ornament{top:auto;bottom:90px}
+.hero-stats{bottom:20px;z-index:3}
+}
