@@ -5,11 +5,27 @@
     <lastmod>2026-10-29</lastmod>
     <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/" />
     <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/" />
   </url>
   <url>
     <loc>https://tevs.kz/kk/</loc>
     <lastmod>2026-10-29</lastmod>
     <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/" />
     <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/" />
+  </url>
+  <url>
+    <loc>https://tevs.kz/privacy/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/privacy/" />
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/privacy/" />
+  </url>
+  <url>
+    <loc>https://tevs.kz/kk/privacy/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/privacy/" />
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/privacy/" />
   </url>
 </urlset>
