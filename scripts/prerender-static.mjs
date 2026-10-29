@@ -26,16 +26,15 @@ const pages = {
   },
 };
 
-const schema = {
-  "@context": "https://schema.org",
+const legalPractice = {
   "@type": "LegalService",
   "@id": "https://tevs.kz/#legal-service",
   name: "TEVS.KZ — юридическая практика Тевс Натальи Геннадьевны",
   url: "https://tevs.kz/",
   image: "https://tevs.kz/natalia-tevs-1333.webp",
-  telephone: "+7 705 544 55 54",
+  telephone: ["+77055445554", "+77142751220"],
   email: "natalia@tevs.kz",
-  priceRange: "₸₸",
+  priceRange: "от 15 000 ₸",
   address: {
     "@type": "PostalAddress",
     streetAddress: "ул. Алтынсарина, д. 34, н.п. 190",
@@ -46,12 +45,52 @@ const schema = {
     "@type": "Country",
     name: "Казахстан",
   },
-  founder: {
-    "@type": "Person",
-    name: "Тевс Наталья Геннадьевна",
-    jobTitle: "Юрист",
-  },
+  founder: { "@id": "https://tevs.kz/#natalia-tevs" },
 };
+
+function pageSchema(lang) {
+  const page = pages[lang];
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      legalPractice,
+      {
+        "@type": "Person",
+        "@id": "https://tevs.kz/#natalia-tevs",
+        name: "Тевс Наталья Геннадьевна",
+        jobTitle: "Юрист",
+        url: "https://tevs.kz/#about",
+        image: "https://tevs.kz/natalia-tevs-1333.webp",
+        worksFor: { "@id": legalPractice["@id"] },
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://tevs.kz/#website",
+        url: "https://tevs.kz/",
+        name: "TEVS.KZ",
+        inLanguage: ["ru-KZ", "kk-KZ"],
+        publisher: { "@id": legalPractice["@id"] },
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${page.canonical}#webpage`,
+        url: page.canonical,
+        name: page.title,
+        description: page.description,
+        inLanguage: lang === "ru" ? "ru-KZ" : "kk-KZ",
+        isPartOf: { "@id": "https://tevs.kz/#website" },
+        mainEntity: { "@id": legalPractice["@id"] },
+        about: { "@id": "https://tevs.kz/#natalia-tevs" },
+      },
+    ],
+  };
+}
+
+function noScriptContact(lang) {
+  return lang === "ru"
+    ? 'Для консультации <a href="tel:+77055445554">позвоните +7 705 544 55 54</a> или <a href="https://wa.me/77055445554">напишите в WhatsApp</a>.'
+    : 'Кеңес алу үшін <a href="tel:+77055445554">+7 705 544 55 54 нөміріне қоңырау шалыңыз</a> немесе <a href="https://wa.me/77055445554">WhatsApp арқылы жазыңыз</a>.';
+}
 
 const template = await readFile(path.join(outputRoot, "index.html"), "utf8");
 
@@ -64,7 +103,8 @@ function buildPage(lang) {
     .replaceAll("__TEVS_DESCRIPTION__", page.description)
     .replaceAll("__TEVS_LOCALE__", page.locale)
     .replaceAll("__TEVS_CANONICAL__", page.canonical)
-    .replace("__TEVS_JSONLD__", JSON.stringify(schema).replaceAll("<", "\\u003c"))
+    .replace("__TEVS_JSONLD__", JSON.stringify(pageSchema(lang)).replaceAll("<", "\\u003c"))
+    .replace("__TEVS_NOSCRIPT__", noScriptContact(lang))
     .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
 }
 
@@ -134,6 +174,9 @@ function privacyHtml(page) {
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#061d33" />
     <link rel="canonical" href="${page.canonical}" />
+    <link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/privacy/" />
+    <link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/privacy/" />
+    <link rel="alternate" hreflang="x-default" href="https://tevs.kz/privacy/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     ${stylesheetTag}
     <title>${escapeHtml(page.title)}</title>
@@ -154,20 +197,23 @@ for (const page of Object.values(privacy)) {
   await writeFile(path.join(directory, "index.html"), privacyHtml(page));
 }
 
+// Include the existing indexable pages, keeping language pairs reciprocal.
+const sitemapGroups = [
+  { ru: "https://tevs.kz/", kk: "https://tevs.kz/kk/" },
+  { ru: privacy.ru.canonical, kk: privacy.kk.canonical },
+];
+const sitemapEntries = sitemapGroups.flatMap((group) =>
+  [group.ru, group.kk].map((url) => `  <url>
+    <loc>${url}</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru-KZ" href="${group.ru}" />
+    <xhtml:link rel="alternate" hreflang="kk-KZ" href="${group.kk}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${group.ru}" />
+  </url>`),
+).join("\n");
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://tevs.kz/</loc>
-    <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/" />
-    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/" />
-  </url>
-  <url>
-    <loc>https://tevs.kz/kk/</loc>
-    <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/" />
-    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/" />
-  </url>
+${sitemapEntries}
 </urlset>
 `;
 
@@ -181,6 +227,9 @@ AddDefaultCharset UTF-8
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  # Only redirect explicitly requested index.html; allow DirectoryIndex internally.
+  RewriteCond %{THE_REQUEST} "\\s/+(.*/)?index\\.html(?:[?\\s])" [NC]
+  RewriteRule ^(.*/)?index\\.html$ /$1 [R=301,L,NE]
   RewriteRule ^(?:app|build|db|drizzle|examples|scripts|static-src|tests|worker|public|\\.openai)(?:/|$) - [F,L,NC]
 </IfModule>
 
@@ -197,6 +246,9 @@ AddDefaultCharset UTF-8
   Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://wa.me; frame-ancestors 'self'; upgrade-insecure-requests"
 
   <FilesMatch "\\.(?:css|js|webp|jpg|jpeg|png|svg)$">
+    Header set Cache-Control "public, max-age=86400, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "-[A-Za-z0-9_-]{8,}\\.(?:css|js)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
   <FilesMatch "\\.(?:html)$">
@@ -215,3 +267,4 @@ for (const staleAsset of ["file.svg", "globe.svg", "window.svg", "tevs-hero.png"
 }
 
 console.log("Prerendered RU/KK pages, privacy pages, SEO files, headers, and 404 page.");
+
