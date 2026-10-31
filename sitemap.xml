@@ -1,31 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://tevs.kz/</loc>
-    <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/" />
-    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/" />
-  </url>
-  <url>
-    <loc>https://tevs.kz/kk/</loc>
-    <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/" />
-    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/" />
-  </url>
-  <url>
-    <loc>https://tevs.kz/privacy/</loc>
-    <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/privacy/" />
-    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/privacy/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/privacy/" />
-  </url>
-  <url>
-    <loc>https://tevs.kz/kk/privacy/</loc>
-    <lastmod>2026-10-29</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/privacy/" />
-    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/privacy/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/privacy/" />
-  </url>
+  <url><loc>https://tevs.kz/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/"/></url>
+  <url><loc>https://tevs.kz/kk/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/"/></url>
+  <url><loc>https://tevs.kz/privacy/</loc><lastmod>2026-10-29</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/privacy/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/privacy/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/privacy/"/></url>
+  <url><loc>https://tevs.kz/kk/privacy/</loc><lastmod>2026-10-29</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/privacy/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/privacy/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/privacy/"/></url>
+  <url><loc>https://tevs.kz/uslugi/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/uslugi/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/uslugi/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/uslugi/"/></url>
+  <url><loc>https://tevs.kz/kk/uslugi/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/uslugi/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/uslugi/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/uslugi/"/></url>
+  <url><loc>https://tevs.kz/uslugi/registraciya-too/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/uslugi/registraciya-too/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/uslugi/registraciya-too/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/uslugi/registraciya-too/"/></url>
+  <url><loc>https://tevs.kz/kk/uslugi/registraciya-too/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/uslugi/registraciya-too/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/uslugi/registraciya-too/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/uslugi/registraciya-too/"/></url>
+  <url><loc>https://tevs.kz/uslugi/dogovory/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/uslugi/dogovory/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/uslugi/dogovory/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/uslugi/dogovory/"/></url>
+  <url><loc>https://tevs.kz/kk/uslugi/dogovory/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/uslugi/dogovory/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/uslugi/dogovory/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/uslugi/dogovory/"/></url>
+  <url><loc>https://tevs.kz/uslugi/nedvizhimost/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/uslugi/nedvizhimost/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/uslugi/nedvizhimost/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/uslugi/nedvizhimost/"/></url>
+  <url><loc>https://tevs.kz/kk/uslugi/nedvizhimost/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/uslugi/nedvizhimost/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/uslugi/nedvizhimost/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/uslugi/nedvizhimost/"/></url>
+  <url><loc>https://tevs.kz/uslugi/predstavitelstvo-v-sude/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/uslugi/predstavitelstvo-v-sude/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/uslugi/predstavitelstvo-v-sude/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/uslugi/predstavitelstvo-v-sude/"/></url>
+  <url><loc>https://tevs.kz/kk/uslugi/predstavitelstvo-v-sude/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/uslugi/predstavitelstvo-v-sude/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/uslugi/predstavitelstvo-v-sude/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/uslugi/predstavitelstvo-v-sude/"/></url>
+  <url><loc>https://tevs.kz/uslugi/semeynye-spory/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/uslugi/semeynye-spory/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/uslugi/semeynye-spory/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/uslugi/semeynye-spory/"/></url>
+  <url><loc>https://tevs.kz/kk/uslugi/semeynye-spory/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/uslugi/semeynye-spory/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/uslugi/semeynye-spory/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/uslugi/semeynye-spory/"/></url>
+  <url><loc>https://tevs.kz/uslugi/soprovozhdenie-biznesa/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/uslugi/soprovozhdenie-biznesa/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/uslugi/soprovozhdenie-biznesa/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/uslugi/soprovozhdenie-biznesa/"/></url>
+  <url><loc>https://tevs.kz/kk/uslugi/soprovozhdenie-biznesa/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/uslugi/soprovozhdenie-biznesa/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/uslugi/soprovozhdenie-biznesa/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/uslugi/soprovozhdenie-biznesa/"/></url>
+  <url><loc>https://tevs.kz/uslugi/konsultaciya/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/uslugi/konsultaciya/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/uslugi/konsultaciya/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/uslugi/konsultaciya/"/></url>
+  <url><loc>https://tevs.kz/kk/uslugi/konsultaciya/</loc><lastmod>2026-10-31</lastmod><xhtml:link rel="alternate" hreflang="ru-KZ" href="https://tevs.kz/uslugi/konsultaciya/"/><xhtml:link rel="alternate" hreflang="kk-KZ" href="https://tevs.kz/kk/uslugi/konsultaciya/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://tevs.kz/uslugi/konsultaciya/"/></url>
 </urlset>
