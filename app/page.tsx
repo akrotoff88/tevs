@@ -5,11 +5,10 @@ import { FormEvent, useEffect, useState } from "react";
 export type Lang = "ru" | "kk";
 
 const contact = {
-  landline: "(7142) 75-12-20",
-  landlineHref: "tel:+77142751220",
   mobile: "8-705-544-55-54",
   mobileHref: "tel:+77055445554",
   whatsapp: "https://wa.me/77055445554",
+  telegram: "https://t.me/+77055445554",
   email: "natalia@tevs.kz",
 } as const;
 
@@ -26,12 +25,12 @@ const content = {
     ],
     practice: "Юридическая практика",
     heroEyebrow: "Юридическая практика Тевс Натальи Геннадьевны",
-    heroTitle: "Юридическая помощь в Костанае и по Казахстану",
+    heroTitle: "Юридическая помощь в городе Костанай и по Республике Казахстан",
     heroText:
       "Помогаю частным лицам и бизнесу разобраться в юридических вопросах, оценить риски и выбрать понятный план действий.",
     consult: "Получить консультацию",
     viewServices: "Смотреть услуги",
-    heroCard: "Юрист с опытом более 15 лет",
+    heroCard: "Юрист с опытом более 20 лет",
     sectionServices: "Чем я могу помочь",
     servicesTitle: "Юридические услуги",
     allServices: "Смотреть стоимость",
@@ -42,8 +41,8 @@ const content = {
         icon: "home",
       },
       {
-        title: "Бизнес и ТОО",
-        text: "Регистрация и ликвидация ТОО, корпоративные документы и сопровождение изменений",
+        title: "Сопровождение бизнеса",
+        text: "Договоры, корпоративные документы и юридическая поддержка в работе компании",
         icon: "briefcase",
       },
       {
@@ -57,20 +56,20 @@ const content = {
         icon: "landmark",
       },
       {
-        title: "Регистрация и перерегистрация",
+        title: "Регистрация ТОО",
         text: "Регистрация и перерегистрация, внесение изменений в документы и получение справок",
         icon: "document",
       },
       {
-        title: "Консультации и документы",
-        text: "Правовой анализ, договоры, заявления и юридические заключения",
+        title: "Составление договоров",
+        text: "Подготовка и проверка договоров, дополнительных соглашений и правовой анализ условий",
         icon: "scales",
       },
     ],
     aboutEyebrow: "Обо мне",
     aboutTitle: "Тевс Наталья Геннадьевна",
     aboutText1:
-      "Более 15 лет занимаюсь вопросами гражданского, корпоративного, семейного и административного права.",
+      "Более 20 лет занимаюсь вопросами гражданского, корпоративного, семейного и административного права.",
     aboutText2:
       "Внимательно изучаю ситуацию, объясняю возможные варианты и риски простым языком. Объём работы, сроки и стоимость согласовываем заранее.",
     principles: [
@@ -88,7 +87,7 @@ const content = {
       ["Итог и следующие шаги", "Передаю подготовленные документы, объясняю результат и дальнейший порядок действий.", "check"],
     ],
     stats: [
-      ["15+", "лет юридической практики"],
+      ["Более 20", "лет юридической практики"],
       ["400+", "регистрационных процедур"],
       ["140+", "клиентов получили помощь в судебных спорах"],
       ["70+", "объектов недвижимости на сопровождении"],
@@ -154,10 +153,10 @@ const content = {
     ],
     contactEyebrow: "Записаться на консультацию",
     contactTitle: "Контакты",
-    callLabel: "Телефоны · мобильный номер доступен в WhatsApp",
+    callLabel: "Мобильный номер · WhatsApp и Telegram",
     emailLabel: "Электронная почта",
     address:
-      "г. Костанай, ул. Алтынсарина, д. 34, нежилое помещение 190. Ориентир — вывеска «GMZ Консультант»",
+      "РК, Костанайская обл., г. Костанай, ул. Алтынсарина, д. 34, нежилое помещение 190. Ориентир — вывеска «GMZ Консультант»",
     addressLabel: "Приём по предварительной записи",
     formName: "Ваше имя",
     formPhone: "Телефон",
@@ -187,12 +186,12 @@ const content = {
     ],
     practice: "Заңгерлік тәжірибе",
     heroEyebrow: "Заңгер Тевс Наталья Геннадьевна",
-    heroTitle: "Қостанайда және Қазақстан бойынша заң көмегі",
+    heroTitle: "Қостанай қаласында және Қазақстан Республикасы бойынша заң көмегі",
     heroText:
       "Жеке тұлғалар мен бизнеске заң мәселелерін түсінуге, тәуекелдерді бағалауға және нақты іс-қимыл жоспарын таңдауға көмектесемін.",
     consult: "Кеңес алу",
     viewServices: "Қызметтерді көру",
-    heroCard: "15 жылдан астам тәжірибесі бар заңгер",
+    heroCard: "20 жылдан астам тәжірибесі бар заңгер",
     sectionServices: "Қандай мәселелер бойынша көмектесе аламын",
     servicesTitle: "Заңгерлік қызметтер",
     allServices: "Қызмет құнын көру",
@@ -203,8 +202,8 @@ const content = {
         icon: "home",
       },
       {
-        title: "Бизнес және ЖШС",
-        text: "ЖШС тіркеу және тарату, корпоративтік құжаттар мен өзгерістерді сүйемелдеу",
+        title: "Бизнесті сүйемелдеу",
+        text: "Шарттар, корпоративтік құжаттар және компания жұмысына заңгерлік қолдау",
         icon: "briefcase",
       },
       {
@@ -218,20 +217,20 @@ const content = {
         icon: "landmark",
       },
       {
-        title: "Тіркеу және қайта тіркеу",
+        title: "ЖШС тіркеу",
         text: "Тіркеу және қайта тіркеу, құжаттарға өзгерістер енгізу және анықтамалар алу",
         icon: "document",
       },
       {
-        title: "Кеңес және құжаттар",
-        text: "Құқықтық талдау, шарттар, өтініштер және заңгерлік қорытындылар",
+        title: "Шарттар дайындау",
+        text: "Шарттар мен қосымша келісімдерді дайындау, тексеру және талаптарды құқықтық талдау",
         icon: "scales",
       },
     ],
     aboutEyebrow: "Мен туралы",
     aboutTitle: "Тевс Наталья Геннадьевна",
     aboutText1:
-      "Азаматтық, корпоративтік, отбасылық және әкімшілік құқық салаларындағы мәселелермен 15 жылдан астам айналысып келемін.",
+      "Азаматтық, корпоративтік, отбасылық және әкімшілік құқық салаларындағы мәселелермен 20 жылдан астам айналысып келемін.",
     aboutText2:
       "Жағдайды мұқият зерттеп, ықтимал нұсқалар мен тәуекелдерді қарапайым тілмен түсіндіремін. Жұмыс көлемін, мерзімін және құнын алдын ала келісеміз.",
     principles: [
@@ -249,7 +248,7 @@ const content = {
       ["Қорытынды және келесі қадамдар", "Дайындалған құжаттарды беріп, нәтижені және әрі қарайғы әрекет тәртібін түсіндіремін.", "check"],
     ],
     stats: [
-      ["15+", "жыл заңгерлік тәжірибе"],
+      ["20", "жылдан астам заңгерлік тәжірибе"],
       ["400+", "тіркеу рәсімі"],
       ["140+", "сот даулары бойынша көмек алған клиент"],
       ["70+", "сүйемелдеудегі жылжымайтын мүлік нысаны"],
@@ -315,10 +314,10 @@ const content = {
     ],
     contactEyebrow: "Кеңеске жазылу",
     contactTitle: "Байланыс",
-    callLabel: "Телефондар · ұялы нөмір WhatsApp-та қолжетімді",
+    callLabel: "Ұялы нөмір · WhatsApp және Telegram",
     emailLabel: "Электрондық пошта",
     address:
-      "Қостанай қ., Алтынсарин көш., 34-үй, 190-тұрғын емес үй-жай. Бағдар — «GMZ Консультант» маңдайшасы",
+      "Қазақстан Республикасы, Қостанай облысы, Қостанай қ., Алтынсарин көш., 34-үй, 190-тұрғын емес үй-жай. Бағдар — «GMZ Консультант» маңдайшасы",
     addressLabel: "Алдын ала жазылу бойынша қабылдау",
     formName: "Сіздің атыңыз",
     formPhone: "Телефон",
@@ -583,6 +582,11 @@ function LanguageSwitcher({ lang }: { lang: Lang }) {
   );
 }
 
+const serviceSlugs = ["nedvizhimost", "soprovozhdenie-biznesa", "semeynye-spory", "predstavitelstvo-v-sude", "registraciya-too", "dogovory"];
+function serviceHref(lang: Lang, index?: number) {
+  return `${lang === "kk" ? "/kk" : ""}/uslugi/${index === undefined ? "" : `${serviceSlugs[index]}/`}`;
+}
+
 export default function Home({ lang = "ru" }: { lang?: Lang } = {}) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -721,15 +725,15 @@ export default function Home({ lang = "ru" }: { lang?: Lang } = {}) {
                 <>
                   Юридическая помощь
                   <br />
-                  в Костанае
+                  в городе Костанай
                   <br />
-                  и по Казахстану
+                  и по Республике Казахстан
                 </>
               ) : (
                 <>
-                  Қостанайда және
+                  Қостанай қаласында
                   <br />
-                  Қазақстан бойынша
+                  және Қазақстан Республикасы бойынша
                   <br />
                   заң көмегі
                 </>
@@ -772,17 +776,18 @@ export default function Home({ lang = "ru" }: { lang?: Lang } = {}) {
         <div className="container">
           <Heading eyebrow={t.sectionServices} title={t.servicesTitle} />
           <div className="services-grid">
-            {t.services.map((service) => (
+            {t.services.map((service, index) => (
               <article className="service-card" key={service.title}>
                 <div className="service-icon"><Icon name={service.icon} /></div>
-                <h3>{service.title}</h3>
+                <h3><a className="service-card-link" href={serviceHref(lang, index)}>{service.title}<span aria-hidden="true">↗</span></a></h3>
                 <p>{service.text}</p>
               </article>
             ))}
           </div>
-          <a className="button button-outline section-button" href="#prices">
-            {t.allServices}<span>→</span>
-          </a>
+          <div className="service-actions">
+            <a className="button button-outline" href={serviceHref(lang)}>{lang === "ru" ? "Все услуги" : "Барлық қызметтер"}<span>→</span></a>
+            <a className="service-consult-link" href={`${serviceHref(lang)}konsultaciya/`}>{lang === "ru" ? "Начать с консультации" : "Кеңес алудан бастау"}<span aria-hidden="true">↗</span></a>
+          </div>
         </div>
       </section>
 
@@ -896,10 +901,10 @@ export default function Home({ lang = "ru" }: { lang?: Lang } = {}) {
                 <span><Icon name="phone" /></span>
                 <div>
                   <strong>
-                    <a href={contact.landlineHref}>{contact.landline}</a>
                     <a href={contact.mobileHref}>{contact.mobile}</a>
                   </strong>
                   <small>{t.callLabel}</small>
+                  <div className="contact-messengers"><a href={contact.whatsapp} target="_blank" rel="noreferrer">WhatsApp</a><a href={contact.telegram} target="_blank" rel="noreferrer">Telegram</a></div>
                 </div>
               </div>
               <a href={`mailto:${contact.email}`}>
@@ -953,7 +958,8 @@ export default function Home({ lang = "ru" }: { lang?: Lang } = {}) {
           </div>
           <div>
             <h3>{t.footerServices}</h3>
-            {t.services.slice(0, 6).map((service) => <a href="#services" key={service.title}>{service.title}</a>)}
+            {t.services.slice(0, 6).map((service, index) => <a href={serviceHref(lang, index)} key={service.title}>{service.title}</a>)}
+            <a href={`${serviceHref(lang)}konsultaciya/`}>{lang === "ru" ? "Консультация юриста" : "Заңгер кеңесі"}</a>
           </div>
           <div>
             <h3>{t.footerCompany}</h3>
@@ -967,11 +973,11 @@ export default function Home({ lang = "ru" }: { lang?: Lang } = {}) {
             <a href="#contacts">{t.nav[6][0]}</a>
           </div>
           <div className="footer-contact">
-            <a href={contact.landlineHref}><Icon name="phone" />{contact.landline}</a>
             <a href={contact.mobileHref}><Icon name="phone" />{contact.mobile}</a>
             <a href={`mailto:${contact.email}`}><Icon name="mail" />{contact.email}</a>
             <div className="socials" aria-label={lang === "ru" ? "Связаться в мессенджере" : "Мессенджер арқылы байланысу"}>
               <a href={contact.whatsapp} target="_blank" rel="noreferrer" aria-label="WhatsApp"><Icon name="whatsapp" /></a>
+              <a href={contact.telegram} target="_blank" rel="noreferrer" aria-label="Telegram"><Icon name="send" /></a>
             </div>
             <a className="privacy" href={lang === "ru" ? "/privacy/" : "/kk/privacy/"}>{t.privacy}</a>
           </div>

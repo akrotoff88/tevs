@@ -45,3 +45,15 @@ npm run build:static
 ```
 
 Требуется Node.js 22.13 или новее.
+
+## Страницы услуг
+
+`/uslugi/` и `/kk/uslugi/` содержат семь направлений. Каждая услуга имеет отдельную русскую и казахскую страницу, связанную с главной, каталогом, соседними услугами и записью на консультацию.
+
+- Тексты и соответствие языков: `scripts/services-content.mjs`.
+- Данные практики и метаданные главных страниц: `scripts/site-config.mjs`.
+- Генерация HTML, hreflang, JSON-LD и sitemap: `scripts/prerender-static.mjs`.
+- Оформление: `app/services.css`.
+- Действующие настройки хостинга, аналитики и политики сохранены в `public/`.
+
+После изменения текстов выполните `npm run build:static`, затем `node --test tests/static-output.test.mjs tests/service-pages.test.mjs`. Генератор также допускает повторный запуск после сборки: исходная оболочка Vite сохраняется в `.static-ssr/template.html`.
