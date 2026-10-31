@@ -19,7 +19,7 @@ if (template.includes('__TEVS_TITLE__')) {
 if (!template.includes('__TEVS_TITLE__')) throw new Error('Missing unrendered template; run build:static');
 const stylesheet = template.match(/<link[^>]+rel="stylesheet"[^>]*>/i)?.[0];
 if (!stylesheet) throw new Error('Missing compiled stylesheet');
-const updated = '2026-10-31';
+const updated = '2026-11-01';
 const home = (lang) => lang === 'ru' ? '/' : '/kk/';
 const esc = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 const jsonld = (value) => JSON.stringify(value).replaceAll('<', '\\u003c');
@@ -56,26 +56,26 @@ const copy = {
   ru: {
     home: 'Главная', services: 'Услуги', geography: 'Костанай · дистанционно по Казахстану',
     catalogTitle: 'Юридические услуги в Казахстане',
-    catalogIntro: 'Помогаю частным лицам и бизнесу с документами, сделками и спорами. Здесь можно подробнее узнать о каждом направлении и выбрать, с чего начать.',
+    catalogIntro: 'Помогаю с регистрацией ТОО, договорами, сделками с недвижимостью и судебными спорами. Принимаю в Костанае и консультирую дистанционно.',
     choose: 'Выбрать услугу', more: 'Подробнее', priceLabel: 'Стоимость услуг',
-    priceNote: 'Объём работы, сроки и итоговую стоимость согласуем после обсуждения задачи.',
-    whatsapp: 'Обсудить в WhatsApp', phone: '+7 705 544 55 54',
+    priceNote: 'Точную стоимость и сроки согласуем до начала работы.',
+    whatsapp: 'Написать в WhatsApp', phone: '+7 705 544 55 54',
     appointment: 'Приём в Костанае по предварительной записи.',
     consultation: 'Записаться на консультацию', experience: 'Более 20 лет юридической практики',
-    related: 'По вашей ситуации также может быть полезно', author: 'Тевс Наталья Геннадьевна',
+    related: 'Другие юридические услуги', author: 'Тевс Наталья Геннадьевна',
     openMenu: 'Открыть меню', closeMenu: 'Закрыть меню', official: 'Официальная информация',
     catalogMessage: 'Здравствуйте! Хочу обсудить юридический вопрос.',
   },
   kk: {
     home: 'Басты бет', services: 'Қызметтер', geography: 'Қостанай · Қазақстан бойынша қашықтан',
     catalogTitle: 'Қазақстандағы заңгерлік қызметтер',
-    catalogIntro: 'Жеке тұлғалар мен бизнеске құжаттар, мәмілелер және даулар бойынша көмектесемін. Мұнда әр бағыт туралы толығырақ біліп, неден бастауға болатынын таңдауға болады.',
+    catalogIntro: 'ЖШС тіркеу, шарттар, жылжымайтын мүлік мәмілелері және сот даулары бойынша көмектесемін. Қостанайда қабылдаймын және қашықтан кеңес беремін.',
     choose: 'Қызметті таңдау', more: 'Толығырақ', priceLabel: 'Қызметтердің құны',
-    priceNote: 'Жұмыс көлемін, мерзімін және нақты құнын міндетті талқылағаннан кейін келісеміз.',
-    whatsapp: 'WhatsApp-та талқылау', phone: '+7 705 544 55 54',
+    priceNote: 'Нақты құны мен мерзімдерін жұмысты бастамас бұрын келісеміз.',
+    whatsapp: 'WhatsApp арқылы жазу', phone: '+7 705 544 55 54',
     appointment: 'Қостанайда алдын ала жазылу бойынша қабылдау.',
     consultation: 'Кеңеске жазылу', experience: '20 жылдан астам заңгерлік тәжірибе',
-    related: 'Жағдайыңызға қатысты басқа қызметтер', author: 'Тевс Наталья Геннадьевна',
+    related: 'Басқа заңгерлік қызметтер', author: 'Тевс Наталья Геннадьевна',
     openMenu: 'Мәзірді ашу', closeMenu: 'Мәзірді жабу', official: 'Ресми ақпарат',
     catalogMessage: 'Сәлеметсіз бе! Заң мәселесін талқылағым келеді.',
   },
@@ -124,7 +124,7 @@ function crumbs(lang, pageName, slug) {
 function contactCard(lang, service) {
   const t = copy[lang];
   const message = service
-    ? (lang === 'ru' ? `Здравствуйте! Хочу обсудить вопрос: ${service[lang].name.toLowerCase()}.` : `Сәлеметсіз бе! Осы мәселені талқылағым келеді: ${service[lang].name.toLowerCase()}.`)
+    ? (lang === 'ru' ? `Здравствуйте! Интересует услуга «${service[lang].name}».` : `Сәлеметсіз бе! «${service[lang].name}» қызметі туралы білгім келеді.`)
     : t.catalogMessage;
   return `<aside class="service-contact-card" aria-label="${esc(t.consultation)}">
     <div class="service-specialist"><img src="/natalia-tevs-720.webp" alt="${esc(t.author)}" width="72" height="86" decoding="async"><div><strong>${esc(t.author)}</strong><span>${esc(t.experience)}</span></div></div>
