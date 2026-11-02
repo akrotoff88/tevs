@@ -20,6 +20,7 @@ if (!template.includes('__TEVS_TITLE__')) throw new Error('Missing unrendered te
 const stylesheet = template.match(/<link[^>]+rel="stylesheet"[^>]*>/i)?.[0];
 if (!stylesheet) throw new Error('Missing compiled stylesheet');
 const updated = '2026-11-01';
+const homeUpdated = '2026-11-03';
 const home = (lang) => lang === 'ru' ? '/' : '/kk/';
 const esc = (value) => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 const jsonld = (value) => JSON.stringify(value).replaceAll('<', '\\u003c');
@@ -219,7 +220,7 @@ await writeFile(path.join(output, '.htaccess'), await readFile(path.join(root, '
 await writeFile(path.join(output, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`);
 
 const groups = [
-  { ru: '/', kk: '/kk/', date: updated },
+  { ru: '/', kk: '/kk/', date: homeUpdated },
   { ru: '/privacy/', kk: '/kk/privacy/', date: '2026-10-29' },
   ...['', ...services.map((x) => x.slug)].map((slug) => ({ ru: servicePath('ru', slug), kk: servicePath('kk', slug), date: updated })),
 ];

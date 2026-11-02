@@ -870,14 +870,6 @@ svg {
   background: var(--cream-deep);
 }
 
-.clients-intro {
-  max-width: 780px;
-  margin: -4px auto 28px;
-  color: #5a6671;
-  line-height: 1.65;
-  text-align: center;
-}
-
 .clients-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -888,8 +880,10 @@ svg {
   display: flex;
   min-height: 82px;
   padding: 17px 20px;
-  align-items: center;
-  gap: 15px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 6px;
   border: 1px solid rgba(201, 146, 75, 0.2);
   border-radius: 7px;
   background: rgba(255, 253, 249, 0.88);
@@ -901,12 +895,10 @@ svg {
   background: rgba(255, 250, 241, 0.98);
 }
 
-.client-number {
-  flex: 0 0 auto;
-  color: var(--gold-text);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 17px;
-  line-height: 1;
+.client-activity {
+  color: #5a6671;
+  font-size: 13.5px;
+  line-height: 1.5;
 }
 
 .client-card strong {
@@ -2026,10 +2018,6 @@ svg {
 .about-intro p:not(.eyebrow),
 .price-row {
   font-size: 14.75px;
-}
-
-.clients-intro {
-  font-size: 16px;
 }
 
 .client-card strong {
