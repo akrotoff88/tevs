@@ -781,14 +781,15 @@ export default function Home({ lang = "ru" }: { lang?: Lang } = {}) {
             {t.services.map((service, index) => (
               <article className="service-card" key={service.title}>
                 <div className="service-icon"><Icon name={service.icon} /></div>
-                <h3><a className="service-card-link" href={serviceHref(lang, index)}>{service.title}<span aria-hidden="true">↗</span></a></h3>
+                <h3><a className="service-card-link" href={serviceHref(lang, index)}>{service.title}</a></h3>
                 <p>{service.text}</p>
+                <span className="service-card-more" aria-hidden="true">{lang === "ru" ? "Подробнее об услуге" : "Қызмет туралы"}</span>
               </article>
             ))}
           </div>
           <div className="service-actions">
-            <a className="button button-outline" href={serviceHref(lang)}>{lang === "ru" ? "Все услуги" : "Барлық қызметтер"}<span>→</span></a>
-            <a className="service-consult-link" href={`${serviceHref(lang)}konsultaciya/`}>{lang === "ru" ? "Начать с консультации" : "Кеңес алудан бастау"}<span aria-hidden="true">↗</span></a>
+            <a className="button button-outline" href={serviceHref(lang)}>{lang === "ru" ? "Все услуги" : "Барлық қызметтер"}</a>
+            <a className="service-consult-link" href={`${serviceHref(lang)}konsultaciya/`}>{lang === "ru" ? "Начать с консультации" : "Кеңес алудан бастау"}</a>
           </div>
         </div>
       </section>

@@ -130,7 +130,7 @@ function contactCard(lang, service) {
   return `<aside class="service-contact-card" aria-label="${esc(t.consultation)}">
     <div class="service-specialist"><img src="/natalia-tevs-720.webp" alt="${esc(t.author)}" width="72" height="86" decoding="async"><div><strong>${esc(t.author)}</strong><span>${esc(t.experience)}</span></div></div>
     ${service ? `<p class="service-price-label">${esc(t.priceLabel)}</p><p class="service-price">${esc(service[lang].price)}</p><p class="service-price-note">${esc(t.priceNote)}</p>` : ''}
-    <a class="button button-primary" href="https://wa.me/77055445554?text=${encodeURIComponent(message)}" target="_blank" rel="noreferrer">${esc(t.whatsapp)}<span aria-hidden="true">↗</span></a>
+    <a class="button button-primary" href="https://wa.me/77055445554?text=${encodeURIComponent(message)}" target="_blank" rel="noreferrer">${esc(t.whatsapp)}</a>
     <a class="service-phone" href="tel:+77055445554">${t.phone}</a>
     <div class="service-contact-links"><a href="https://t.me/+77055445554" target="_blank" rel="noreferrer">Telegram</a><a href="mailto:natalia@tevs.kz">natalia@tevs.kz</a></div>
     <a class="service-appointment" href="${home(lang)}#contacts">${esc(t.appointment)}</a>
@@ -189,8 +189,8 @@ for (const lang of ['ru', 'kk']) {
     const breadcrumb = crumbs(lang, s.name, service.slug);
     const related = s.related.map((slug) => services.find((x) => x.slug === slug));
     const content = `<section class="service-hero"><div class="container">${breadcrumb.html}<p class="service-geography">${esc(t.geography)}</p><h1>${esc(s.title)}</h1><p class="service-intro">${esc(s.intro)}</p></div></section>
-      <div class="container service-detail-layout"><article class="service-article"><h2>${esc(s.heading)}</h2><p>${esc(s.body)}</p><ul class="service-includes">${s.items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul><section class="service-preparation"><h2>${esc(s.prepareTitle)}</h2><p>${esc(s.prepare)}</p></section><details class="service-faq"><summary>${esc(s.question)}<span aria-hidden="true">+</span></summary><p>${esc(s.answer)}</p></details>${s.source ? `<p class="service-official">${esc(t.official)}: <a href="${esc(s.source[0])}" target="_blank" rel="noreferrer">${esc(s.source[1])}<span aria-hidden="true"> ↗</span></a></p>` : ''}</article>${contactCard(lang, service)}</div>
-      <section class="container service-related"><h2>${esc(t.related)}</h2><div class="service-related-links">${related.map((x) => `<a href="${servicePath(lang, x.slug)}">${esc(x[lang].name)}<span aria-hidden="true">↗</span></a>`).join('')}</div><a class="service-all-link" href="${servicePath(lang)}">← ${esc(lang === 'ru' ? 'Все юридические услуги' : 'Барлық заңгерлік қызметтер')}</a></section>`;
+      <div class="container service-detail-layout"><article class="service-article"><h2>${esc(s.heading)}</h2><p>${esc(s.body)}</p><ul class="service-includes">${s.items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul><section class="service-preparation"><h2>${esc(s.prepareTitle)}</h2><p>${esc(s.prepare)}</p></section><details class="service-faq"><summary>${esc(s.question)}<span aria-hidden="true">+</span></summary><p>${esc(s.answer)}</p></details>${s.source ? `<p class="service-official">${esc(t.official)}: <a href="${esc(s.source[0])}" target="_blank" rel="noreferrer">${esc(s.source[1])}</a></p>` : ''}</article>${contactCard(lang, service)}</div>
+      <section class="container service-related"><h2>${esc(t.related)}</h2><div class="service-related-links">${related.map((x) => `<a href="${servicePath(lang, x.slug)}">${esc(x[lang].name)}</a>`).join('')}</div><a class="service-all-link" href="${servicePath(lang)}">${esc(lang === 'ru' ? 'Все юридические услуги' : 'Барлық заңгерлік қызметтер')}</a></section>`;
     const structured = graph([
       webPage(lang, url, s.title, s.description, `${url}#service`),
       { '@type': 'Service', '@id': `${url}#service`, name: s.title, serviceType: s.name, description: s.description, url, areaServed: { '@type': 'Country', name: 'Казахстан' }, provider: { '@id': `${origin}/#legal-service` } },
@@ -199,7 +199,7 @@ for (const lang of ['ru', 'kk']) {
     await writeRoute(servicePath(lang, service.slug), documentHtml(lang, service.slug, s.title, s.description, content, structured));
   }
   const breadcrumb = crumbs(lang, t.services);
-  const cards = services.map((s, index) => `<a class="service-index-card${s.slug === 'konsultaciya' ? ' service-index-consultation' : ''}" href="${servicePath(lang, s.slug)}"><span class="service-index-number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span><h2>${esc(s[lang].name)}</h2><p>${esc(s[lang].intro)}</p><span class="service-index-more">${esc(t.more)} <span aria-hidden="true">↗</span></span></a>`).join('');
+  const cards = services.map((s, index) => `<a class="service-index-card${s.slug === 'konsultaciya' ? ' service-index-consultation' : ''}" href="${servicePath(lang, s.slug)}"><span class="service-index-number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span><h2>${esc(s[lang].name)}</h2><p>${esc(s[lang].intro)}</p><span class="service-index-more">${esc(t.more)}</span></a>`).join('');
   const content = `<section class="service-hero"><div class="container">${breadcrumb.html}<p class="service-geography">${esc(t.geography)}</p><h1>${esc(t.catalogTitle)}</h1><p class="service-intro">${esc(t.catalogIntro)}</p></div></section><section class="container service-index" aria-label="${esc(t.choose)}">${cards}</section>`;
   const url = `${origin}${servicePath(lang)}`;
   const structured = graph([
